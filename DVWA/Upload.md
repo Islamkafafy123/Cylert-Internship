@@ -13,4 +13,3 @@
 - there is a Content-Type header that has a value application/x-php
 - edit this value (Content-Type: image/jpeg) and forward the request with our PHP script.
 - now go to the same path and open netcat and we got a shell
-- 
