@@ -39,4 +39,5 @@
   john hashes.txt --wordlist=/usr/share/wordlists/rockyou.txt --format=Raw-MD5
 
   ```
-  
+# Meduium
+
