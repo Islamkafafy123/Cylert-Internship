@@ -39,5 +39,24 @@
   john hashes.txt --wordlist=/usr/share/wordlists/rockyou.txt --format=Raw-MD5
 
   ```
-# Meduium
+# Medium
+- clicking the "View Source" button on the bottom right of the challenge.
+- We see the addition of the PHP function mysqli_real_escape_string(). Essentially, this method cleans ("sanitizes") the input, removing any characters an attacker traditionally uses to trigger a SQL injection (SQLi) attack. From this link, we know the characters the function removes include:
+```
+NUL (ASCII 0), \n, \r, \, ', ", Control-Z
+```
+- the only character that's in our exploit that will get removed by mysqli_real_escape_string() is the single-quote character '
+- we only inserted the single quote to break out of our last server-side query
+- which had quotes already built into it. But this challenge removed them, meaning we don't need quotes at all! If we remove them
+- we don't need to worry about any processing by mysqli_real_escape_string(). So let's modify our exploit as follows:
+- ```
+  % or 0=0 union select user, password from dvwa.users #
+  ```
+- error from %
+- we try to put valid id
+- ```
+  1 or 0=0 union select user, password from dvwa.users #
+  ```
+  - and yes we got the hashes
+
 
