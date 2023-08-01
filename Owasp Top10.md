@@ -6,3 +6,23 @@
   - use of Stored Procedures
   - Implement input validation and sanitization
   - escaping all user-supplied input
+# 2) Broken Authentication
+- Ex :Session Time-out, Credential Stuffing
+- where attackers exploit to impersonate a legitimate user online
+- always in two areas: session management and credential management because either of these two can be used to hijacked session IDs or can steal login credentials
+- Your web application has a broken authentication if it does the following :
+  - Allows automated attacks such as brute-force attacks, where an attacker tries different usernames and passwords to carry out an attack
+  - Allows default and weak passwords. Example: password, admin
+  - Allows a weak credential recovery system or forgot password workaround
+  - Allows a weak credential recovery system or forgot password workaround
+  - No multi-factor authentication system is in place
+  - If your session ID gets exposed in the URL
+  - If it fails to renew session ID each time for a new session
+  - If it fails to kill every session ID or tokens after application log out or after the time specified for inactivity expired
+- Broken Authentication Mitigation:
+  - Making use of captcha.
+  - Reduce the number of tries for a particular user based on the session ID or the IP
+  - Blocking multiple requests coming from the same IP
+  - Making the admin login page inaccessible to the public
+  - Implement multi-factor authentication to prevent brute-forcing and credential theft
+  - 
