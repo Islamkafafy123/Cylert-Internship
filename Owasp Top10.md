@@ -26,4 +26,34 @@
   - Making the admin login page inaccessible to the public
   - Implement multi-factor authentication to prevent brute-forcing and credential theft
 # 3) Sensitive Data Exposure
-- 
+- Example: Unencrypted data
+- known as information disclosure or information leakage. This usually occurs when an application or website unknowingly discloses sensitive data to users who do not have the privilege of view or access
+- these are some of the information that may get leaked to the public:
+  - Financial information
+  - Login credentials
+  - Commercial or business data
+  - Health record
+  - Technical details about the application or website.
+- Sensitive Data Exposure Mitigation:
+  - Always identify and classify which data is sensitive according to the privacy laws and the regulatory requirements
+  - Immediately remove any data that is not needed to be stored
+  - If you are going to be store any sensitive data, make sure it is encrypted at rest
+  - Make sure you encrypt all data in transit with security protocols such as TLS and SSL
+  - Do not cache sensitive data
+  - Always store passwords with different encryption methods
+# 4) XXE Injection
+- Example: File Retrieval, Blind XXE
+- security vulnerability that gives a malicious user access to an application that processes XML data or parses XML input
+- When this vulnerability is successfully exploited, it allows an attacker to view files on the application server and to interact with any other back end or external system that the application can access
+- XXE attack can further be escalated to compromise other back-end or underlying servers through Server Side Request Forgery (SSRF) attacks
+- the actual vulnerability lies in the way the XML is parsed
+- XXE Injection Mitigation:
+  - must disable DTD and XML external entity features
+  - All the XML processors and libraries used within the application must always be updated and patched
+  - Use good XML parsers that are not vulnerable by default
+  - Make use of a very good SAST tool that can help detect XXE in your source code
+  - Make sure XML and XSL file upload functionality validates every incoming XML by using XSD validation
+  - Make use of API security gateways
+  - Make use of WAF
+  - You can start making use of JSON data format, which is less complex
+# 5) Broken Access Control
