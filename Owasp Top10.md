@@ -25,4 +25,5 @@
   - Blocking multiple requests coming from the same IP
   - Making the admin login page inaccessible to the public
   - Implement multi-factor authentication to prevent brute-forcing and credential theft
-  - 
+# 3) Sensitive Data Exposure
+- 
